@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% for class in classes %}
+	<h2>Topics of {{class.subject.name}} of class{{class.name}}</h2>
+	
+	{% for chapter in class.chapter.all %}
+	<ul>
+	 <li><a href="{{chapter.get_absolute_url}}"><p>Chapter {{chapter.name}}</p></a></li>
+	
+	</ul>	{% endfor %}
+	{% empty %}
+	<p> No content yet</p>
+	{% endfor %}
+</body>
+</html>
